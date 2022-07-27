@@ -12,25 +12,10 @@ namespace ConstructorApp
             //Console.WriteLine(d1.GetDate());
             //Console.WriteLine(d2.GetDate());
 
-            Employee e1 = new Employee();
-            e1.Id = 100;
-            e1.FName = "Younis";
-            e1.LName = "Sultan";
+            Employee e1 =  Employee.Create(1000, "Younis", "Sultan");
+           
 
-            Employee e2 = new Employee
-            {
-                Id = 1001,
-                FName = "Nasir",
-                LName = "Imsalem"
-            };
-
-            Employee e3 = new Employee(1002)
-            {
-                FName = "Isaam",
-                LName = "Ali"
-            };
-
-            Console.WriteLine(e3.DisplayName());
+            Console.WriteLine(e1.DisplayName());
             Console.ReadKey();
         }
     }
@@ -53,14 +38,14 @@ namespace ConstructorApp
             this.lname = lname;
         }
 
-        public Employee Create(int id,string fname,string lname)
+        public static Employee Create(int id,string fname,string lname)
         {
             return new Employee(id, fname, lname);
 
         }
         public Employee(int id)
         {
-            Id = id;
+            this.id = id;
         }
 
         public string DisplayName()
