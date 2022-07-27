@@ -12,7 +12,7 @@ namespace ConstructorApp
             //Console.WriteLine(d1.GetDate());
             //Console.WriteLine(d2.GetDate());
 
-            Employee e1 =  Employee.Create(1000, "Younis", "Sultan");
+            Employee e1 =  Employee.Create(1000, "Younis", "Sultann");
            
 
             Console.WriteLine(e1.DisplayName());
