@@ -37,12 +37,25 @@ namespace ConstructorApp
 
     public class Employee
     {
-        public int Id;
-        public string FName;
-        public string LName;
-
-        public Employee()
+        private Employee()
         {
+
+        }
+        private int id;
+        private string fname;
+        private string lname;
+
+      
+        private  Employee(int id, string fname, string lname)
+        {
+            this.id = id;
+            this.fname = fname;
+            this.lname = lname;
+        }
+
+        public Employee Create(int id,string fname,string lname)
+        {
+            return new Employee(id, fname, lname);
 
         }
         public Employee(int id)
@@ -52,7 +65,7 @@ namespace ConstructorApp
 
         public string DisplayName()
         {
-            return $"Id: {Id}Name:{FName} {LName}\n";
+            return $"Id: {id}Name:{fname} {lname}\n";
         }
     }
     public class Date
